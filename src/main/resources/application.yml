@@ -1,0 +1,15 @@
+server:
+  port: 5000
+
+external-api:
+  base-url: http://localhost:3001
+  connect-timeout: 2s
+  read-timeout: 8s
+
+app:
+  per-product-timeout: 3000
+
+spring:
+  threads:
+    virtual:
+      enabled: true
