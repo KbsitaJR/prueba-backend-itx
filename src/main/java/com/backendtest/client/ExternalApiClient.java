@@ -54,7 +54,9 @@ public class ExternalApiClient {
             ProductDetail detail = restClient.get()
                 .uri("/product/{productId}", productId)
                 .retrieve()
-                .onStatus(HttpStatusCode::is4xxClientError, (req, res) -> {})
+                .onStatus(HttpStatusCode::is4xxClientError, (req, res) -> {
+                    throw new RuntimeException("Product not found: " + productId);
+                })
                 .body(ProductDetail.class);
             log.debug("fetched_product_detail productId={}", productId);
             return Optional.ofNullable(detail);

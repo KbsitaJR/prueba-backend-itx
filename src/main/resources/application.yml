@@ -4,7 +4,7 @@ server:
 external-api:
   base-url: http://localhost:3001
   connect-timeout: 2s
-  read-timeout: 8s
+  read-timeout: 3s
 
 app:
   per-product-timeout: 3000
